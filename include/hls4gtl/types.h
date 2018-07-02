@@ -1,5 +1,5 @@
-#ifndef types_h
-#define types_h
+#ifndef hls4gtl_types_h
+#define hls4gtl_types_h
 
 #include <ap_int.h>
 

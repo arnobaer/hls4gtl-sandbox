@@ -1,5 +1,5 @@
-#include "gtl.h"
-#include "comb_muon.h"
+#include "hls4gtl/gtl.h"
+#include "hls4gtl/comb_muon.h"
 
 #include <cassert>
 #include <iostream>

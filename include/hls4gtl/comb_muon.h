@@ -1,7 +1,7 @@
-#ifndef comb_muon_h
-#define comb_muon_h
+#ifndef hls4gtl_comb_muon_h
+#define hls4gtl_comb_muon_h
 
-#include "types.h"
+#include "hls4gtl/types.h"
 
 template<size_t N_REQ>
 ap_uint<1> comb_muon(const muon_t muons[N_MUONS], const muon_req_t reqs[N_REQ])

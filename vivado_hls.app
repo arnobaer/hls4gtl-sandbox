@@ -1,17 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="com.autoesl.autopilot.project" name="hls4gtl" top="gtl">
-    <files>
-        <file name="hls4gtl/include/hls4gtl/comb_muon.h" sc="0" tb="false" cflags=""/>
-        <file name="hls4gtl/include/hls4gtl/gtl.h" sc="0" tb="false" cflags=""/>
-        <file name="hls4gtl/include/hls4gtl/types.h" sc="0" tb="false" cflags=""/>
-        <file name="hls4gtl/src/gtl.cpp" sc="0" tb="false" cflags=""/>
-        <file name="../test/gtl_tb.cpp" sc="0" tb="true" cflags=""/>
-    </files>
-    <includePaths/>
-    <libraryPaths/>
-    <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0" compiler="true"/>
-    </Simulation>
-    <solutions xmlns="">
-        <solution name="solution1" status="active"/>
-    </solutions>
+  <files>
+    <file name="hls4gtl/src/comb_muon.h" sc="0" tb="false" cflags=""/>
+    <file name="hls4gtl/src/gtl.h" sc="0" tb="false" cflags=""/>
+    <file name="hls4gtl/src/types.h" sc="0" tb="false" cflags=""/>
+    <file name="hls4gtl/src/gtl.cpp" sc="0" tb="false" cflags=""/>
+    <file name="../src/gtl_tb.cpp" sc="0" tb="true" cflags=""/>
+  </files>
+  <solutions>
+    <solution name="solution1" status="active"/>
+  </solutions>
+  <includePaths/>
+  <libraryPaths/>
+  <Simulation>
+    <SimFlow name="csim" csimMode="0" lastCsimMode="0" compiler="true"/>
+  </Simulation>
 </project>

@@ -29,3 +29,11 @@
 # Executables
 *.exe
 *.out
+
+# Vivado HLS
+.apc
+.cproject
+.project
+.settings
+/solution*
+.vivado_hls_log_all.xml

@@ -10,7 +10,7 @@ void gtl(const input_t& input, output_t& output)
 #pragma HLS ARRAY_PARTITION variable=input.taus complete dim=1
 #pragma HLS ARRAY_PARTITION variable=input.jets complete dim=1
 #pragma HLS ARRAY_PARTITION variable=output.algorithms complete dim=1
-
+/*
 	// Requirements
 	const muon_req_t muon_req_01 = {0x42, 0x1, 0x0};
 	const muon_req_t muon_req_02 = {0x46, 0x0, 0x1};
@@ -35,7 +35,7 @@ void gtl(const input_t& input, output_t& output)
 	output.algorithms[3] = cond_single_muon_06;
 	output.algorithms[4] = cond_single_muon_01 and cond_double_muon_02;
 	output.algorithms[5] = cond_quad_muon_07;
-
+*/
 	// Calculate final OR
 	for (size_t i = 0; i < N_ALGORITHMS; ++i)
 	{

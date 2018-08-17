@@ -11,11 +11,11 @@ struct xorshift32
     ap_uint<32> next()
     {
         /* Algorithm "xor" from p. 4 of Marsaglia, "Xorshift RNGs" */
-        ap_uint<32> x = state;
+        ap_uint<32> x = state[0];
         x ^= x << 13;
         x ^= x >> 17;
         x ^= x << 5;
-        state = x;
+        state[0] = x;
         return x;
     }
 };

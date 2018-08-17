@@ -1,12 +1,27 @@
 #include "gtl.h"
 #include "comb_muon.h"
 
+#include "xorshift32.h"
+#include "xorshift128.h"
+
 #include <iostream>
 
 void gtl(const input_t& input, output_t& output)
 {
 #pragma HLS ARRAY_PARTITION variable=input.muons complete dim=1
 #pragma HLS ARRAY_PARTITION variable=output.algorithms complete dim=1
+	
+	// Testing pseudo random numbers...
+	
+	static xorshift32 rand32 = {0xdeadbeef};
+	input.jets[0].pt = rand32.next() % ((1 << 14) - 1);
+	input.jets[1].pt = rand32.next() % ((1 << 14) - 1);
+	input.jets[2].pt = rand32.next() % ((1 << 14) - 1);
+	
+	static xorshift128 rand128 = {0xdeadbeef, 0xbeef0000, 0x0000beef, 0x00beef00};
+	input.jets[3].pt = rand128.next() % ((1 << 14) - 1);
+	input.jets[4].pt = rand128.next() % ((1 << 14) - 1);
+	input.jets[5].pt = rand128.next() % ((1 << 14) - 1);
 
 	// Requirements
 	const muon_t::cuts_t muon_cuts_01 = {0x42, 0x1, 0x0};

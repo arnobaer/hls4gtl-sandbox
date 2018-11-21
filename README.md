@@ -2,11 +2,18 @@
 
 Exploring Vivado HLS
 
-### Usage
+## Usage
 
     $ git clone https://github.com/arnobaer/hls4gtl-sandbox.git
-    $ vivado_hls -p ./hls4gtl/
+    $ git checkout <branch/tag>
+    $ python manage.py <command>
 
-Open the project directory using Vivado HLS and add a new solution to run synthesis.
+### Commands
 
-Default solution clock is 25ns.
+ - `csim` run C simulation
+ - `csynth` run C synthesis
+ - `cosim` run co-simulation
+ - `export` run export IP core
+ - `clean` remove project/solution
+
+Default solution clock is 24ns.

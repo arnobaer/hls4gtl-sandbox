@@ -15,7 +15,7 @@ struct xorshift128
 #pragma HLS ARRAY_PARTITION variable=state complete dim=0
 
         /* Algorithm "xor128" from p. 5 of Marsaglia, "Xorshift RNGs" */
-        value_type s;
+        value_type s = 0;
         value_type t = state[3];
         t ^= t << 11;
         t ^= t >> 8;

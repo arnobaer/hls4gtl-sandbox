@@ -60,9 +60,7 @@ def cmd_auto_create_project(args):
 def cmd_csim(args):
     cmd_auto_create_project(args)
     context='config/csim.tcl'
-    testvectors = auto_testvectors(args)
     command = [args.vivado_hls, context]
-    command.extend(testvectors)
     check_call(command)
 
 def cmd_csynth(args):
@@ -74,6 +72,8 @@ def cmd_csynth(args):
 
 def cmd_cosim(args):
     cmd_auto_create_project(args)
+    cmd_csim(args)
+    cmd_csynth(args)
     context='config/cosim.tcl'
     command = [args.vivado_hls, context]
     check_call(command)

@@ -57,6 +57,6 @@ void main()
     input.data = false;
     top(input, output);
 
-    return (inout.data != output.result);
+    return (input.data != output.result);
 }
 ```

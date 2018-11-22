@@ -38,3 +38,4 @@
 /solution*
 .vivado_hls_log_all.xml
 vivado_hls.log
+/hls_impl

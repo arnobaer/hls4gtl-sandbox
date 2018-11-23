@@ -11,16 +11,20 @@ struct input_type
     typedef ap_uint<1> value_type;
     typedef size_t size_type;
 
+    static const size_type dim = 4;
     static const size_type size = 12;
 
-    value_type data[4][size];
+    value_type data[dim][size];
 };
 
 struct output_type
 {
     typedef ap_uint<1> value_type;
+    typedef size_t size_type;
 
-    value_type result[4];
+    static const size_type size = 4;
+
+    value_type result[size];
 };
 
 #endif

@@ -25,7 +25,7 @@ struct combine<1>
 
             signal_type result = false;
 
-            for (size_t a = MIN; a < MAX; ++a)
+            for (size_t a = MIN; a <= MAX; ++a)
             {
 #pragma HLS UNROLL
                 result |= data[0][a];
@@ -52,10 +52,10 @@ struct combine<2>
 
             signal_type result = false;
 
-            for (size_t a = MIN; a < MAX; ++a)
+            for (size_t a = MIN; a <= MAX; ++a)
             {
 #pragma HLS UNROLL
-                for (size_t b = MIN; b < MAX; ++b)
+                for (size_t b = MIN; b <= MAX; ++b)
                 {
 #pragma HLS UNROLL
                     if (a != b)
@@ -86,13 +86,13 @@ struct combine<3>
 
             signal_type result = false;
 
-            for (size_t a = MIN; a < MAX; ++a)
+            for (size_t a = MIN; a <= MAX; ++a)
             {
 #pragma HLS UNROLL
-                for (size_t b = MIN; b < MAX; ++b)
+                for (size_t b = MIN; b <= MAX; ++b)
                 {
 #pragma HLS UNROLL
-                    for (size_t c = MIN; c < MAX; ++c)
+                    for (size_t c = MIN; c <= MAX; ++c)
                     {
 #pragma HLS UNROLL
                         if (a != b and a != c and b != c)
@@ -124,10 +124,10 @@ struct combine<4>
 
             signal_type result = false;
 
-            for (size_t c = MIN; c < MAX; ++c)
+            for (size_t c = MIN; c <= MAX; ++c)
             {
 #pragma HLS UNROLL
-                for (size_t d = MIN; d < MAX; ++d)
+                for (size_t d = MIN; d <= MAX; ++d)
                 {
 #pragma HLS UNROLL
                     if (a != b and a != c and a != d and b != c and b != d and c != d)
@@ -150,10 +150,10 @@ struct combine<4>
 
             signal_type result = false;
 
-            for (size_t a = MIN; a < MAX; ++a)
+            for (size_t a = MIN; a <= MAX; ++a)
             {
 #pragma HLS UNROLL
-                for (size_t b = MIN; b < MAX; ++b)
+                for (size_t b = MIN; b <= MAX; ++b)
                 {
 #pragma HLS UNROLL
                     result |= process(a, b, data); // workaround to reduce memory load

@@ -3,6 +3,6 @@
 
 #include "types.h"
 
-void top(const input_type& input, output_type& output);
+void top(const setup_type& setup, const input_type& input, output_type& output);
 
 #endif

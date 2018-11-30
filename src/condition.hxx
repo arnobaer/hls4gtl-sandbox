@@ -4,6 +4,8 @@
 #include <ap_int.h>
 #include <cstddef>
 
+#include "utils.hxx"
+
 namespace condition {
 
 enum chgcor_mode_type

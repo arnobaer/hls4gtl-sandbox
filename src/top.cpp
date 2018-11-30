@@ -2,8 +2,6 @@
 
 #include "impl.hxx"
 
-} // namespace impl
-
 void top(const input_type& input, output_type& output)
 {
     #pragma HLS INTERFACE ap_none port=input
@@ -17,7 +15,7 @@ void top(const input_type& input, output_type& output)
     ol.process(input);
 
     impl::condition_logic cl;
-    cl.process(ol, input.chgcor_double, input.chgcor_triple, input.chgcor_quad);
+    cl.process(ol);
 
     impl::algorithm_logic al;
     al.process(cl);

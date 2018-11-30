@@ -18,18 +18,16 @@ struct combine
     typedef ap_uint<1> return_type;
     typedef ap_uint<1> future_param_type;
 
-    future_param_type future_param;
-
     template<size_t slice_min, size_t slice_max>
     struct slice
     {
         template<chgcor_mode_type chgcor_mode>
         struct chgcor
         {
-            ap_uint<1> future_param;
+            future_param_type future_param;
 
             template<typename T, size_t N>
-            ap_uint<1> match(const T (&vector_1)[N]) const
+            return_type match(const T (&vector_1)[N]) const
             {
                 #pragma HLS INTERFACE ap_none port=vector_1
                 #pragma HLS INTERFACE ap_ctrl_none port=return
@@ -46,8 +44,8 @@ struct combine
             }
 
             template<typename T1, typename T2, size_t N>
-            ap_uint<1> match(const T1 (&vector_1)[N], const T1 (&vector_2)[N],
-                             const T2 (&charge_1)[N], const T2 (&charge_2)[N]) const
+            return_type match(const T1 (&vector_1)[N], const T1 (&vector_2)[N],
+                              const T2 (&charge_1)[N], const T2 (&charge_2)[N]) const
             {
                 #pragma HLS INTERFACE ap_none port=vector_1
                 #pragma HLS INTERFACE ap_none port=vector_2
@@ -90,8 +88,8 @@ struct combine
             }
 
             template<typename T1, typename T2, size_t N>
-            ap_uint<1> match(const T1 (&vector_1)[N], const T1 (&vector_2)[N], const T1 (&vector_3)[N],
-                             const T2 (&charge_1)[N], const T2 (&charge_2)[N], const T2 (&charge_3)[N]) const
+            return_type match(const T1 (&vector_1)[N], const T1 (&vector_2)[N], const T1 (&vector_3)[N],
+                              const T2 (&charge_1)[N], const T2 (&charge_2)[N], const T2 (&charge_3)[N]) const
             {
                 #pragma HLS INTERFACE ap_none port=vector_1
                 #pragma HLS INTERFACE ap_none port=vector_2
@@ -142,8 +140,8 @@ struct combine
             }
 
             template<typename T1, typename T2, size_t N>
-            ap_uint<1> match(const T1 (&vector_1)[N], const T1 (&vector_2)[N], const T1 (&vector_3)[N], const T1 (&vector_4)[N],
-                             const T2 (&charge_1)[N], const T2 (&charge_2)[N], const T2 (&charge_3)[N], const T2 (&charge_4)[N]) const
+            return_type match(const T1 (&vector_1)[N], const T1 (&vector_2)[N], const T1 (&vector_3)[N], const T1 (&vector_4)[N],
+                              const T2 (&charge_1)[N], const T2 (&charge_2)[N], const T2 (&charge_3)[N], const T2 (&charge_4)[N]) const
             {
                 #pragma HLS INTERFACE ap_none port=vector_1
                 #pragma HLS INTERFACE ap_none port=vector_2

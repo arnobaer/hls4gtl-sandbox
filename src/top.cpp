@@ -1,5 +1,6 @@
 #include "top.h"
 
+#include "condition.hxx"
 #include "impl.hxx"
 
 void top(const input_type& input, output_type& output)
